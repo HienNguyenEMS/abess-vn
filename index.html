@@ -9,8 +9,8 @@
     <meta http-equiv="Expires" content="0" />
 
     <title>Đào tạo cho ABE Industrial Vietnam: Tối ưu Quy trình với Google Workspace & AI</title>
-    <meta name="description" content="Chương trình đào tạo đặc biệt, giúp đội ngũ ABE Industrial Vietnam làm chủ công cụ số, tối ưu quy trình sản xuất & báo cáo, nâng cao hiệu suất làm việc.">
-    <meta name="keywords" content="đào tạo doanh nghiệp, abe industrial vietnam, google sheets, google drive, chatgpt, gemini, tối ưu sản xuất, quản lý chất lượng">
+    <meta name="description" content="Chương trình đào tạo đặc biệt, giúp đội ngũ ABE Industrial Vietnam làm chủ Google Workspace, AppSheet, Looker Studio và AI để tối ưu quy trình sản xuất & báo cáo.">
+    <meta name="keywords" content="đào tạo doanh nghiệp, abe industrial vietnam, google sheets, appsheet, looker studio, google drive, chatgpt, gemini, tối ưu sản xuất, quản lý chất lượng">
     <meta name="author" content="EMS SOLUTION">
     <link rel="canonical" href="http://innoflex.giaiphapsoems.vn/">
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Workspace_Logo.svg/2560px-Google_Workspace_Logo.svg.png">
@@ -30,7 +30,7 @@
         .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
         section { padding: 60px 0; overflow: hidden; }
         .section-title { text-align: center; font-size: 2.5em; color: var(--secondary-color); margin-bottom: 15px; font-weight: 800; line-height: 1.2; }
-        .section-subtitle { text-align: center; max-width: 700px; margin: 0 auto 40px auto; color: #556276; font-size: 1.1em; }
+        .section-subtitle { text-align: center; max-width: 750px; margin: 0 auto 40px auto; color: #556276; font-size: 1.1em; }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
         .navbar { background-color: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 12px 0; position: sticky; top: 0; z-index: 999; border-bottom: 1px solid var(--border-color); }
@@ -60,6 +60,12 @@
         .benefit-card .icon-wrapper { width: 60px; height: 60px; margin: 0 auto 20px; background: linear-gradient(145deg, var(--primary-color), #4e9aff); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(10, 104, 255, 0.3); }
         .benefit-card .icon-wrapper svg { width: 30px; height: 30px; }
         .benefit-card h3 { font-size: 1.25em; color: var(--secondary-color); margin-bottom: 8px; }
+        #tools { background-color: var(--light-bg-color); }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 20px 30px; align-items: center; max-width: 900px; margin: 0 auto; }
+        .tool-card { text-align: center; padding: 15px; background-color: #fff; border-radius: var(--border-radius); transition: all 0.3s; border: 1px solid var(--border-color); }
+        .tool-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); }
+        .tool-card img { height: 50px; margin: 0 auto; object-fit: contain; }
+        .tool-card p { margin-top: 10px; font-weight: 500; color: #5f6368; font-size: 0.9em; }
         #curriculum { background-color: var(--light-bg-color); }
         .curriculum-accordion { max-width: 900px; margin: 0 auto; }
         .chapter-item { background-color: #fff; border: 1px solid var(--border-color); border-radius: var(--border-radius); margin-bottom: 12px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
@@ -74,7 +80,7 @@
         .lesson-item::before { content: '✓'; position: absolute; left: 15px; top: 12px; color: var(--primary-color); font-weight: bold; }
         .lesson-item p { margin: 0; font-size: 0.95em; flex-grow: 1; }
         .lesson-duration { color: #5f6368; font-size: 0.9em; font-weight: 500; white-space: nowrap; }
-        #instructors { background-color: var(--light-bg-color); }
+        #instructors { background-color: #fff; }
         .instructors-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .instructor-card { background: #fff; padding: 25px; border-radius: var(--border-radius); text-align: center; width: 320px; box-shadow: var(--box-shadow); border: 1px solid var(--border-color); }
         .instructor-card img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 5px solid white; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
@@ -114,8 +120,9 @@
         #form-success h4 { margin-top: 0; color: var(--primary-color); font-size: 1.4em; }
         #form-success p { margin-bottom: 8px; line-height: 1.5; }
         #form-success .price { font-weight: 700; font-size: 1.5em; color: var(--accent-color); margin-top: 10px; }
-        @media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-grid .footer-col:first-child { grid-column: 1 / -1; } }
-        @media (max-width: 768px) { section { padding: 50px 0; } .section-title { font-size: 2em; } .hero h1 { font-size: 2.5em; } .hero p { font-size: 1.1em; } .hero { padding: 70px 0; } .benefit-grid { grid-template-columns: 1fr; } .benefit-card { padding: 20px 15px; } .benefit-card h3 { font-size: 1.1em; } .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center;} .social-icons { justify-content: center; } }
+        @media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-grid .footer-col:first-child { grid-column: 1 / -1; } .nav-links { display: none; } }
+        @media (max-width: 768px) { section { padding: 50px 0; } .section-title { font-size: 2em; } .hero h1 { font-size: 2.5em; } .hero p { font-size: 1.1em; } .hero { padding: 70px 0; } .benefit-grid { grid-template-columns: 1fr; } .benefit-card { padding: 20px 15px; } .benefit-card h3 { font-size: 1.1em; } .tools-grid { grid-template-columns: repeat(3, 1fr); gap: 15px;} .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center;} .social-icons { justify-content: center; } }
+        @media (max-width: 480px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -126,7 +133,8 @@
                 <span>EMS SOLUTION</span> 
             </a> 
             <ul class="nav-links"> 
-                <li><a href="#benefits">Lợi ích thực tiễn</a></li> 
+                <li><a href="#benefits">Lợi ích thực tiễn</a></li>
+                <li><a href="#tools">Công cụ</a></li>
                 <li><a href="#curriculum">Nội dung đào tạo</a></li> 
                 <li><a href="#instructors">Giảng viên</a></li> 
                 <li><a href="#final-cta">Đăng ký</a></li> 
@@ -138,8 +146,8 @@
     <header class="hero" id="hero"> 
         <div class="container fade-in"> 
             <span class="course-tag">🚀 ĐÀO TẠO ĐẶC BIỆT CHO ABE INDUSTRIAL VIETNAM</span> 
-            <h1>Làm chủ Công cụ số, Tối ưu Quy trình Sản xuất & Báo cáo</h1> 
-            <p>Khóa học được thiết kế riêng cho đội ngũ ABE, tập trung vào các kỹ năng ứng dụng Google Workspace và AI để giải quyết các vấn đề thực tế trong công việc hàng ngày, từ quản lý vật tư, báo cáo sản xuất đến kiểm soát chất lượng.</p> 
+            <h1>Số hóa Toàn diện: Xây App, Dựng Dashboard, Làm chủ AI</h1> 
+            <p>Khóa học duy nhất thiết kế riêng cho ABE, giúp đội ngũ tự tay xây dựng ứng dụng quản lý, tạo dashboard theo dõi sản xuất và biến AI thành trợ lý đắc lực chỉ sau 4 buổi học.</p> 
             <button class="btn btn-register">Đăng ký tham gia ngay</button> 
         </div> 
     </header>
@@ -151,49 +159,63 @@
                 <p class="section-subtitle fade-in">Chương trình không dạy lý thuyết suông. Chúng tôi tập trung vào việc giúp anh chị em giải quyết những công việc lặp lại, tốn thời gian và dễ sai sót ngay tại ABE.</p>
                 <div class="benefit-grid">
                     <div class="benefit-card fade-in">
-                        <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" /></svg></div>
-                        <h3>Số hóa Báo cáo & Quy trình</h3><p>Thay thế giấy tờ, file Excel rời rạc bằng hệ thống báo cáo sản xuất, checklist kiểm tra chất lượng (QC) online. Lãnh đạo xem được dữ liệu real-time, không cần chờ đợi.</p>
+                        <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg></div>
+                        <h3>Xây App di động (AppSheet)</h3><p>Tự tay tạo các ứng dụng trên điện thoại để báo cáo sản xuất, nhập liệu QC, yêu cầu vật tư... ngay tại xưởng. Không cần giấy bút, không cần chờ về văn phòng mở Excel.</p>
                     </div>
                     <div class="benefit-card fade-in" style="transition-delay: 0.1s;">
-                        <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></div>
-                        <h3>Giảm Sai Sót & Tiết kiệm Giờ làm</h3><p>Tự động hóa việc tổng hợp dữ liệu, tra cứu thông tin vật tư, theo dõi tiến độ. Giảm thiểu sai sót do nhập liệu thủ công, giúp mọi người có thêm thời gian cho công việc chuyên môn.</p>
+                        <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v18h18M18.75 3.75h.008v.008h-.008V3.75Zm-3.75 0h.008v.008h-.008V3.75Zm-3.75 0h.008v.008h-.008V3.75Zm-3.75 0h.008v.008H7.5V3.75Zm-3.75 0h.008v.008H3.75V3.75Zm3.75 12h.008v.008H7.5v-.008Zm3.75 0h.008v.008h-.008v-.008Zm3.75 0h.008v.008h-.008v-.008Zm3.75 0h.008v.008h-.008v-.008Z" /></svg></div>
+                        <h3>Dựng Dashboard (Looker Studio)</h3><p>Biến những bảng tính khô khan thành các biểu đồ, báo cáo trực quan và tự động. Lãnh đạo có thể xem tiến độ sản xuất, tỷ lệ lỗi, hiệu suất máy móc... real-time trên một màn hình.</p>
                     </div>
                     <div class="benefit-card fade-in" style="transition-delay: 0.2s;">
                         <div class="icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z" /></svg></div>
-                        <h3>Trợ lý AI cho Kỹ thuật & Văn phòng</h3><p>Biến AI thành người phụ việc đắc lực: soạn email kỹ thuật, tóm tắt tài liệu an toàn lao động, viết báo cáo tuần, dịch thông số kỹ thuật... nhanh chóng và chuyên nghiệp.</p>
+                        <h3>Làm chủ Trợ lý AI</h3><p>Ra lệnh cho AI để soạn email kỹ thuật, tóm tắt tài liệu an toàn lao động, viết báo cáo tuần, dịch thông số kỹ thuật... nhanh chóng, chuyên nghiệp và chính xác hơn.</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tools">
+            <div class="container">
+                <h2 class="section-title fade-in">Bộ công cụ toàn diện sẽ được trang bị</h2>
+                <div class="tools-grid fade-in">
+                    <div class="tool-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/1200px-Google_Drive_icon_%282020%29.svg.png" alt="Google Drive Logo" loading="lazy"><p>Google Drive</p></div>
+                    <div class="tool-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/512px-Google_Sheets_logo_%282014-2020%29.svg.png" alt="Google Sheets Logo" loading="lazy"><p>Google Sheets</p></div>
+                    <div class="tool-card"><img src="https://cdn-1.webcatalog.io/catalog/appsheet/appsheet-icon-filled-256.png" alt="Google AppSheet Logo" loading="lazy"><p>AppSheet</p></div>
+                    <div class="tool-card"><img src="https://images.seeklogo.com/logo-png/61/2/looker-studio-logo-png_seeklogo-617989.png" alt="Looker Studio Logo" loading="lazy"><p>Looker Studio</p></div>
+                    <div class="tool-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/2048px-ChatGPT_logo.svg.png" alt="ChatGPT Logo" loading="lazy"><p>ChatGPT</p></div>
+                    <div class="tool-card"><img src="https://seeklogo.com/images/G/google-gemini-logo-24621E2F32-seeklogo.com.png" alt="Google Gemini Logo" loading="lazy"><p>Google Gemini</p></div>
                 </div>
             </div>
         </section>
 
         <section id="curriculum">
             <div class="container">
-                <h2 class="section-title fade-in">Nội dung Đào tạo 4 Buổi Thực chiến tại ABE</h2>
-                <p class="section-subtitle fade-in">Lộ trình được thiết kế cô đọng, đi thẳng vào các bài toán của ngành sản xuất cơ khí, giúp học viên ứng dụng ngay vào công việc (Thời lượng: 3-4 giờ/buổi).</p>
+                <h2 class="section-title fade-in">Lộ trình Đào tạo 4 Buổi Toàn diện tại ABE</h2>
+                <p class="section-subtitle fade-in">Lộ trình được thiết kế theo mô hình Dữ liệu -> Ứng dụng -> Phân tích -> Trí tuệ, giúp học viên áp dụng ngay vào công việc (Thời lượng: 3-4 giờ/buổi).</p>
                 <div class="curriculum-accordion fade-in">
-                    <div class="chapter-item"><button class="chapter-header"><span class="chapter-title"><span class="icon">+</span><h4>Buổi 1: Xây dựng Nền tảng làm việc chung & Quản lý Tài liệu Kỹ thuật</h4></span></button><div class="lesson-list">
-                        <div class="lesson-item"><p>Tổ chức Google Drive thông minh: Quản lý bản vẽ, tài liệu kỹ thuật, hợp đồng an toàn, dễ tìm.</p><span class="lesson-duration">60 phút</span></div>
-                        <div class="lesson-item"><p>Phân quyền và chia sẻ tài liệu an toàn: Ai được xem, ai được sửa? Tránh thất thoát thông tin.</p><span class="lesson-duration">45 phút</span></div>
-                        <div class="lesson-item"><p>Làm việc nhóm trên cùng một file: Cùng nhau cập nhật tiến độ, sửa đổi tài liệu mà không cần gửi qua lại.</p><span class="lesson-duration">45 phút</span></div>
-                        <div class="lesson-item"><p>Thực hành: Thiết lập thư mục chung cho một dự án mới của ABE (VD: Dự án cung cấp ống cho công trình X).</p><span class="lesson-duration">30 phút</span></div>
+                    <div class="chapter-item"><button class="chapter-header"><span class="chapter-title"><span class="icon">+</span><h4>Buổi 1: Nền tảng làm việc số & Quản lý Tài liệu Kỹ thuật</h4></span></button><div class="lesson-list">
+                        <div class="lesson-item"><p>Giới thiệu Google Drive, Docs, Calendar: Quản lý bản vẽ, tài liệu kỹ thuật, lịch bảo trì máy móc.</p><span class="lesson-duration">60 phút</span></div>
+                        <div class="lesson-item"><p>Phân quyền và chia sẻ tài liệu an toàn trong nội bộ và với đối tác.</p><span class="lesson-duration">45 phút</span></div>
+                        <div class="lesson-item"><p>Tạo Form khảo sát (Google Forms): Phiếu báo cáo sự cố, form đăng ký đào tạo an toàn lao động.</p><span class="lesson-duration">45 phút</span></div>
+                        <div class="lesson-item"><p>Thực hành: Thiết lập thư mục chung và luồng báo cáo sự cố cho một dây chuyền sản xuất.</p><span class="lesson-duration">30 phút</span></div>
                     </div></div>
-                    <div class="chapter-item"><button class="chapter-header"><span class="chapter-title"><span class="icon">+</span><h4>Buổi 2: Google Sheets: Từ Báo cáo thủ công đến Dashboard Quản lý Sản xuất</h4></span></button><div class="lesson-list">
-                        <div class="lesson-item"><p>Tạo Form Báo cáo Sản xuất Hàng ngày, Checklist Kiểm tra Chất lượng (QC) trên Google Forms.</p><span class="lesson-duration">60 phút</span></div>
-                        <div class="lesson-item"><p>Ứng dụng hàm (VLOOKUP, QUERY) để tra cứu vật tư, theo dõi tiến độ đơn hàng.</p><span class="lesson-duration">60 phút</span></div>
-                        <div class="lesson-item"><p>Dùng Conditional Formatting để tự động cảnh báo tồn kho thấp, sản phẩm không đạt chất lượng.</p><span class="lesson-duration">30 phút</span></div>
-                        <div class="lesson-item"><p>Thực hành: Lập một bảng theo dõi tồn kho vật tư và tiến độ sản xuất đơn giản.</p><span class="lesson-duration">30 phút</span></div>
+                    <div class="chapter-item"><button class="chapter-header"><span class="chapter-title"><span class="icon">+</span><h4>Buổi 2: Làm chủ Google Sheets - "Bộ não" Dữ liệu của Nhà máy</h4></span></button><div class="lesson-list">
+                        <div class="lesson-item"><p>Tổng hợp dữ liệu tự động từ Google Forms vào Sheets.</p><span class="lesson-duration">30 phút</span></div>
+                        <div class="lesson-item"><p>Mẹo xử lý bảng tính: Các hàm QUERY, VLOOKUP để tra cứu vật tư, tổng hợp báo cáo sản xuất.</p><span class="lesson-duration">75 phút</span></div>
+                        <div class="lesson-item"><p>Conditional Formatting: Tự động tô màu cảnh báo tồn kho thấp, sản phẩm không đạt QC.</p><span class="lesson-duration">45 phút</span></div>
+                        <div class="lesson-item"><p>Thực hành: Xây dựng bảng theo dõi tồn kho vật tư (ống, khớp nối, bản lề...) và sản lượng hàng ngày.</p><span class="lesson-duration">30 phút</span></div>
                     </div></div>
-                     <div class="chapter-item"><button class="chapter-header"><span class="chapter-title"><span class="icon">+</span><h4>Buổi 3: Làm quen với Trợ lý AI - "Bộ não" Sáng tạo cho Công việc</h4></span></button><div class="lesson-list">
-                        <div class="lesson-item"><p>AI là gì và nó giúp gì cho công việc tại ABE? (ChatGPT, Google Gemini).</p><span class="lesson-duration">45 phút</span></div>
-                        <div class="lesson-item"><p>Tư duy đặt câu hỏi (Prompt) cho AI trong ngành cơ khí, sản xuất để có câu trả lời chính xác.</p><span class="lesson-duration">60 phút</span></div>
-                        <div class="lesson-item"><p>Những việc AI làm tốt và những việc cần con người kiểm tra lại.</p><span class="lesson-duration">45 phút</span></div>
-                        <div class="lesson-item"><p>Thực hành: Dùng AI lên ý tưởng cải tiến một quy trình trong xưởng.</p><span class="lesson-duration">30 phút</span></div>
+                     <div class="chapter-item"><button class="chapter-header"><span class="chapter-title"><span class="icon">+</span><h4>Buổi 3: Xây dựng App Quản lý Sản xuất với AppSheet (Không cần Code)</h4></span></button><div class="lesson-list">
+                        <div class="lesson-item"><p>Giới thiệu AppSheet: Biến file Google Sheets thành ứng dụng di động trong 15 phút.</p><span class="lesson-duration">30 phút</span></div>
+                        <div class="lesson-item"><p>Thực hành: Xây dựng App "Báo cáo Sản xuất Hàng ngày" cho nhân viên tại xưởng.</p><span class="lesson-duration">75 phút</span></div>
+                        <div class="lesson-item"><p>Thực hành: Xây dựng App "Checklist QC" với tính năng chụp ảnh sản phẩm lỗi, ghi chú.</p><span class="lesson-duration">60 phút</span></div>
+                        <div class="lesson-item"><p>Hướng dẫn triển khai app cho các thành viên trong đội ngũ.</p><span class="lesson-duration">15 phút</span></div>
                     </div></div>
-                    <div class="chapter-item"><button class="chapter-header"><span class="chapter-title"><span class="icon">+</span><h4>Buổi 4: Thực chiến AI - Tự động hóa Soạn thảo & Báo cáo</h4></span></button><div class="lesson-list">
-                        <div class="lesson-item"><p>Thực hành: Dùng AI soạn thảo email kỹ thuật, trả lời thắc mắc của khách hàng về thông số sản phẩm (khớp nối, bản lề...).</p><span class="lesson-duration">60 phút</span></div>
-                        <div class="lesson-item"><p>Thực hành: Dùng AI tóm tắt tài liệu hướng dẫn an toàn, quy trình vận hành máy móc phức tạp.</p><span class="lesson-duration">45 phút</span></div>
-                        <div class="lesson-item"><p>Thực hành: Dùng AI viết báo cáo tuần, thông báo nội bộ về lịch bảo trì thiết bị.</p><span class="lesson-duration">45 phút</span></div>
-                        <div class="lesson-item"><p>Hỏi đáp và xây dựng thói quen làm việc số hóa, hiệu quả hơn mỗi ngày.</p><span class="lesson-duration">30 phút</span></div>
+                    <div class="chapter-item"><button class="chapter-header"><span class="chapter-title"><span class="icon">+</span><h4>Buổi 4: Dashboard Phân tích & Trợ lý AI Thông minh</h4></span></button><div class="lesson-list">
+                        <div class="lesson-item"><p>Dựng Dashboard (Looker Studio): Tạo biểu đồ theo dõi sản lượng, hiệu suất, tỷ lệ lỗi từ dữ liệu trên Sheets.</p><span class="lesson-duration">75 phút</span></div>
+                        <div class="lesson-item"><p>Làm chủ Trợ lý AI (ChatGPT, Gemini): Cách viết prompt để AI hỗ trợ công việc kỹ thuật.</p><span class="lesson-duration">45 phút</span></div>
+                        <div class="lesson-item"><p>Thực hành AI: Viết email, tóm tắt báo cáo, soạn thảo quy trình vận hành máy.</p><span class="lesson-duration">45 phút</span></div>
+                        <div class="lesson-item"><p>Gợi ý thói quen làm việc số hóa và tổng kết, hỏi đáp.</p><span class="lesson-duration">15 phút</span></div>
                     </div></div>
                 </div>
             </div>
