@@ -104,16 +104,13 @@
         .footer-col h4 { font-size: 1.1em; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
         .footer-col p, .footer-col a { font-size: 0.95em; color: #bdc1c6; text-decoration: none; line-height: 1.7; }
         .footer-col a:hover { color: var(--primary-color); }
-        .social-icons { display: flex; gap: 15px; margin-top: 15px; }
+        .social-icons { display: flex; gap: 15px; margin-top: 15px; align-items: center; }
         .social-icons a { display: inline-flex; width: 42px; height: 42px; background-color: rgba(255, 255, 255, 0.1); border-radius: 50%; align-items: center; justify-content: center; transition: background-color 0.3s; }
         .social-icons a:hover { background-color: var(--primary-color); }
         .social-icons svg { width: 22px; height: 22px; fill: #fff; }
+        .social-icons a.zalo-icon { background-color: white; padding: 6px; box-sizing: border-box; }
+        .social-icons a.zalo-icon img { width: 100%; height: auto; display: block; }
         .copyright { margin-top: 50px; padding-top: 25px; border-top: 1px solid #3d4a5c; font-size: 0.9em; text-align: center; }
-        .floating-widget-container { position: fixed; bottom: 25px; right: 25px; z-index: 998; display: flex; flex-direction: column; gap: 12px; }
-        .floating-btn { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; background-color: var(--primary-color); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s; text-decoration: none; border: 2px solid #fff; }
-        .floating-btn:hover { transform: scale(1.1); }
-        .floating-btn.zalo-btn { background-color: #fff; padding: 8px; }
-        .floating-btn.zalo-btn img { width: 100%; height: auto; }
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(13, 27, 42, 0.7); backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 1001; opacity: 0; visibility: hidden; transition: opacity 0.4s, visibility 0.4s; }
         .modal-overlay.active { opacity: 1; visibility: visible; }
         .modal-content { background: #fff; padding: 30px; border-radius: var(--border-radius); width: 90%; max-width: 500px; position: relative; transform: translateY(-20px) scale(0.95); transition: transform 0.4s; }
@@ -243,7 +240,7 @@
             <div class="container">
                 <h2 class="section-title fade-in">Bộ công cụ toàn diện sẽ được trang bị</h2>
                 <div class="tools-grid fade-in">
-                    <div class="tool-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Workspace_Logo.svg/2560px-Google_Workspace_Logo.svg.png" alt="Google Workspace Logo" loading="lazy"><p>Google Workspace</p></div>
+                    <div class="tool-card"><img src="https://nforceit.com.au/wp-content/uploads/2023/10/nforceit-partner-google-workspace-logo-800x400.png" alt="Google Workspace Logo" loading="lazy"><p>Google Workspace</p></div>
                     <div class="tool-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/512px-Google_Sheets_logo_%282014-2020%29.svg.png" alt="Google Sheets Logo" loading="lazy"><p>Google Sheets</p></div>
                     <div class="tool-card"><img src="https://cdn-1.webcatalog.io/catalog/appsheet/appsheet-icon-filled-256.png" alt="Google AppSheet Logo" loading="lazy"><p>Google AppSheet</p></div>
                     <div class="tool-card"><img src="https://images.seeklogo.com/logo-png/61/2/looker-studio-logo-png_seeklogo-617989.png" alt="Looker Studio Logo" loading="lazy"><p>Looker Studio</p></div>
@@ -340,8 +337,22 @@
                     </a>
                     <h4>CÔNG TY TNHH GIẢI PHÁP SỐ EMS</h4> 
                 </div> 
-                <div class="footer-col"> <h4>Thông tin Công ty</h4> <p> <strong>MST:</strong> 0316870151<br> <strong>Địa chỉ:</strong> 93/4 Liên khu 5-6, P. Bình Bình Tân, TP.HCM<br> <strong>Hotline:</strong> <a href="tel:0903375265">0903.375.265 (Mr. Hiền)</a><br> <strong>Email:</strong> <a href="mailto:admin@gpems.net">admin@gpems.net</a></p> </div> 
-                <div class="footer-col"> <h4>Kết nối với chúng tôi</h4> <div class="social-icons"> <a href="https://www.facebook.com/gpems.net" target="_blank" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88V15.5H8.08v-3.5h2.36V9.62c0-2.34 1.4-3.62 3.52-3.62 1.02 0 2.12.18 2.12.18v3.02h-1.54c-1.14 0-1.5.7-1.5 1.4v1.74h3.34l-.52 3.5h-2.82v6.38C18.34 21.13 22 16.99 22 12c0-5.52-4.48-10-10-10z"/></svg></a> <a href="https://www.youtube.com/@emssolution" target="_blank" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.52 11.23l-5.78 3.26c-.3.17-.68-.04-.68-.38V8.89c0-.34.38-.55.68-.38l5.78 3.26c.3.17.3.64 0 .81z"/></svg></a> </div> </div> 
+                <div class="footer-col"> <h4>Thông tin Công ty</h4> <p> <strong>MST:</strong> 0316870151<br> <strong>Địa chỉ:</strong> 93/4 Liên khu 5-6, P. Bình Bình Tân, TP. Hồ Chí Minh<br> <strong>Hotline:</strong> <a href="tel:0903375265">0903.375.265 (Mr. Hiền)</a><br> <strong>Email:</strong> <a href="mailto:admin@gpems.net">admin@gpems.net</a></p> </div> 
+                <div class="footer-col"> 
+                    <h4>Kết nối với chúng tôi</h4> 
+                    <div class="social-icons"> 
+                        <a href="https://www.facebook.com/gpems.net" target="_blank" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88V15.5H8.08v-3.5h2.36V9.62c0-2.34 1.4-3.62 3.52-3.62 1.02 0 2.12.18 2.12.18v3.02h-1.54c-1.14 0-1.5.7-1.5 1.4v1.74h3.34l-.52 3.5h-2.82v6.38C18.34 21.13 22 16.99 22 12c0-5.52-4.48-10-10-10z"/></svg></a> 
+                        <a href="https://www.youtube.com/@emssolution" target="_blank" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.52 11.23l-5.78 3.26c-.3.17-.68-.04-.68-.38V8.89c0-.34.38-.55.68-.38l5.78 3.26c.3.17.3.64 0 .81z"/></svg></a>
+                        <a href="https://zalo.me/giaiphapsoems" target="_blank" rel="noopener noreferrer" class="zalo-icon" title="Chat qua Zalo" aria-label="Zalo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/2048px-Icon_of_Zalo.svg.png" alt="Zalo Icon">
+                        </a>
+                        <a href="tel:0903375265" title="Gọi Hotline" aria-label="Hotline">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C9.43 21 3 14.57 3 6c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                        </a>
+                    </div> 
+                </div> 
             </div> 
             <div class="copyright"> <p>© 2025 EMS SOLUTION. All Rights Reserved.</p> </div> 
         </div> 
@@ -365,17 +376,6 @@
             </div>
              <div id="form-success"></div>
         </div>
-    </div>
-
-    <div class="floating-widget-container">
-        <a href="https://zalo.me/giaiphapsoems" target="_blank" rel="noopener noreferrer" class="floating-btn zalo-btn" title="Chat qua Zalo">
-            <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/01/Logo-Zalo-Arc.png" alt="Zalo Icon">
-        </a>
-        <a href="tel:0903375265" class="floating-btn" title="Gọi Hotline">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="width:28px; height:28px;">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 6.75z" />
-            </svg>
-        </a>
     </div>
     
     <script>
