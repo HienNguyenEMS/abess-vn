@@ -67,28 +67,31 @@
         .tool-card img { height: 50px; margin: 0 auto; object-fit: contain; }
         .tool-card p { margin-top: 10px; font-weight: 500; color: #5f6368; font-size: 0.9em; }
         #curriculum { background-color: var(--light-bg-color); }
-        .curriculum-accordion { max-width: 900px; margin: 0 auto; }
-        .chapter-item { background-color: #fff; border: 1px solid var(--border-color); border-radius: var(--border-radius); margin-bottom: 12px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .chapter-header { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 18px 20px; background-color: #fff; border: none; cursor: pointer; text-align: left; }
-        .chapter-header:hover { background-color: #f9f9f9; }
+        .curriculum-accordion, .faq-accordion { max-width: 900px; margin: 0 auto; }
+        .chapter-item, .faq-item { background-color: #fff; border: 1px solid var(--border-color); border-radius: var(--border-radius); margin-bottom: 12px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .chapter-header, .faq-question { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 18px 20px; background-color: #fff; border: none; cursor: pointer; text-align: left; }
+        .chapter-header:hover, .faq-question:hover { background-color: #f9f9f9; }
         .chapter-title { display: flex; align-items: center; gap: 15px; }
-        .chapter-title .icon { font-size: 1.4em; color: var(--primary-color); transform: rotate(0deg); transition: transform 0.4s; }
-        .chapter-header.active .chapter-title .icon { transform: rotate(135deg); }
-        .chapter-title h4 { font-size: 1.15em; font-weight: 700; margin: 0; color: var(--secondary-color); }
-        .lesson-list { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; background-color: #fdfdfd; }
+        .chapter-title .icon, .faq-question .icon { font-size: 1.4em; color: var(--primary-color); transform: rotate(0deg); transition: transform 0.4s; }
+        .chapter-header.active .chapter-title .icon, .faq-question.active .icon { transform: rotate(135deg); }
+        .chapter-title h4, .faq-question h4 { font-size: 1.15em; font-weight: 700; margin: 0; color: var(--secondary-color); }
+        .lesson-list, .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease-in-out; background-color: #fdfdfd; }
         .lesson-item { display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; padding: 12px 25px 12px 40px; border-top: 1px solid var(--border-color); position: relative; }
         .lesson-item::before { content: '✓'; position: absolute; left: 15px; top: 12px; color: var(--primary-color); font-weight: bold; }
         .lesson-item p { margin: 0; font-size: 0.95em; flex-grow: 1; }
         .lesson-duration { color: #5f6368; font-size: 0.9em; font-weight: 500; white-space: nowrap; }
+        .faq-answer p { padding: 0 25px 20px; margin: 0; color: #5f6368; line-height: 1.7; }
         #instructors { background-color: #fff; }
         .instructors-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
         .instructor-card { background: #fff; padding: 25px; border-radius: var(--border-radius); text-align: center; width: 320px; box-shadow: var(--box-shadow); border: 1px solid var(--border-color); }
-        .instructor-card img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 5px solid white; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        .instructor-card img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin: 0 auto 15px auto; border: 5px solid white; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
         .instructor-card h3 { font-size: 1.4em; color: var(--secondary-color); margin-bottom: 5px; }
         .instructor-card .title { color: var(--primary-color); font-weight: 500; margin-bottom: 10px; }
         .final-quote { text-align: center; font-size: 1.3em; font-style: italic; color: var(--secondary-color); max-width: 800px; margin: 30px auto 0 auto; padding: 25px; background: var(--light-bg-color); border-radius: var(--border-radius); border-top: 4px solid var(--primary-color); } 
         footer { background-color: var(--secondary-color); color: #bdc1c6; padding: 60px 0 30px; }
         .footer-grid { display: grid; grid-template-columns: 2fr 1.5fr 1fr; gap: 40px; text-align: left; }
+        .footer-logo { display: block; margin-bottom: 15px; }
+        .footer-logo img { max-width: 220px; }
         .footer-col h4 { font-size: 1.1em; color: #fff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
         .footer-col p, .footer-col a { font-size: 0.95em; color: #bdc1c6; text-decoration: none; line-height: 1.7; }
         .footer-col a:hover { color: var(--primary-color); }
@@ -121,7 +124,7 @@
         #form-success p { margin-bottom: 8px; line-height: 1.5; }
         #form-success .price { font-weight: 700; font-size: 1.5em; color: var(--accent-color); margin-top: 10px; }
         @media (max-width: 992px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-grid .footer-col:first-child { grid-column: 1 / -1; } .nav-links { display: none; } }
-        @media (max-width: 768px) { section { padding: 50px 0; } .section-title { font-size: 2em; } .hero h1 { font-size: 2.5em; } .hero p { font-size: 1.1em; } .hero { padding: 70px 0; } .benefit-grid { grid-template-columns: 1fr; } .benefit-card { padding: 20px 15px; } .benefit-card h3 { font-size: 1.1em; } .tools-grid { grid-template-columns: repeat(3, 1fr); gap: 15px;} .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center;} .social-icons { justify-content: center; } }
+        @media (max-width: 768px) { section { padding: 50px 0; } .section-title { font-size: 2em; } .hero h1 { font-size: 2.5em; } .hero p { font-size: 1.1em; } .hero { padding: 70px 0; } .benefit-grid { grid-template-columns: 1fr; } .instructor-card { width: 100%; } .benefit-card { padding: 20px 15px; } .benefit-card h3 { font-size: 1.1em; } .tools-grid { grid-template-columns: repeat(3, 1fr); gap: 15px;} .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center;} .footer-logo img { margin-left: auto; margin-right: auto;} .social-icons { justify-content: center; } }
         @media (max-width: 480px) { .tools-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
@@ -137,6 +140,7 @@
                 <li><a href="#tools">Công cụ</a></li>
                 <li><a href="#curriculum">Nội dung đào tạo</a></li> 
                 <li><a href="#instructors">Giảng viên</a></li> 
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#final-cta">Đăng ký</a></li> 
             </ul> 
             <button class="btn nav-cta btn-register">Đăng ký ngay</button> 
@@ -222,10 +226,22 @@
         </section>
         
         <section id="instructors"> <div class="container"> <h2 class="section-title fade-in">👨‍🏫 Giảng viên chuyên gia</h2> <p class="section-subtitle fade-in">Được dẫn dắt bởi các chuyên gia với kinh nghiệm thực chiến triển khai giải pháp số cho các doanh nghiệp sản xuất và công nghiệp.</p> <div class="instructors-grid"> <div class="instructor-card fade-in"> <img src="https://admin.gpems.net/storage/uploads/courses/lecturers/dwDwZCThmWPgEM0kDi8XnYWkuLke9k-metaNzI0MjU1MTcwMTY2NzAzMTA4MC5wbmc%3D-.png" alt="Chân dung giảng viên Nguyễn Tấn Hiền" loading="lazy"> <h3>Nguyễn Tấn Hiền</h3> <p class="title">Founder & CEO EMS SOLUTION</p> <p>Chuyên gia triển khai hệ thống quản trị và đào tạo chuyển đổi số cho hơn 200+ doanh nghiệp.</p> </div> <div class="instructor-card fade-in" style="transition-delay: 0.1s;"> <img src="https://admin.gpems.net/storage/uploads/courses/lecturers/mlXRjIPyPsdcucphnW5fNbCrq9IRoH-metaMTkwMjE3NjgyNzE2NzE1MzM0MzAuanBn-.jpg" alt="Chân dung giảng viên Nguyễn Văn Hòa" loading="lazy"> <h3>Nguyễn Văn Hòa</h3> <p class="title">Co-Founder & CEO EMSSOLUTION</p> <p>Chuyên gia tư vấn ứng dụng Google Workspace và AI thực chiến trong quản lý & vận hành.</p> </div> </div> </div> </section>
-        
-        <section id="final-cta" style="background-color: var(--light-bg-color); padding-top: 0; padding-bottom: 60px;"> 
+
+        <section id="faq" style="background-color: var(--light-bg-color);"> 
             <div class="container"> 
-                <div class="final-quote fade-in" style="background-color: #fff; border-top-color: var(--accent-color);"> 
+                <h2 class="section-title fade-in">❓ Câu hỏi thường gặp</h2> 
+                <div class="faq-accordion fade-in"> 
+                    <div class="faq-item"> <button class="faq-question"><h4>Nhân viên của chúng tôi không rành công nghệ, liệu có theo kịp không?</h4><span class="icon">+</span></button> <div class="faq-answer"><p>Hoàn toàn có thể. Chương trình được thiết kế cho người không chuyên, tập trung vào thao tác click chuột và tư duy logic đơn giản. Giảng viên sẽ hướng dẫn "cầm tay chỉ việc" và sử dụng các ví dụ gần gũi nhất với công việc hàng ngày tại ABE để mọi người dễ dàng tiếp thu.</p></div> </div> 
+                    <div class="faq-item"> <button class="faq-question"><h4>Dữ liệu của công ty khi thực hành có được bảo mật không?</h4><span class="icon">+</span></button> <div class="faq-answer"><p>Chắc chắn. Chúng tôi cam kết bảo mật tuyệt đối. Khóa học có thể sử dụng dữ liệu mẫu do chúng tôi cung cấp, hoặc tốt hơn, sử dụng chính dữ liệu (đã được ẩn thông tin nhạy cảm) của ABE trên tài khoản của ABE để các bài thực hành có tính ứng dụng cao nhất. Toàn bộ quá trình đều diễn ra dưới sự giám sát của công ty.</p></div> </div> 
+                    <div class="faq-item"> <button class="faq-question"><h4>Sau khóa học, chúng tôi có được hỗ trợ không?</h4><span class="icon">+</span></button> <div class="faq-answer"><p>Chắc chắn. Đây là cam kết hỗ trợ đặc biệt của chúng tôi: Quý công ty sẽ được <strong>hỗ trợ 24/7 bởi chuyên gia</strong> trong suốt quá trình học và <strong>hỗ trợ kỹ thuật trọn vẹn trong 1 năm</strong> sau khi kết thúc khóa học qua Zalo/Email, đảm bảo mọi ứng dụng đã xây dựng đều hoạt động trơn tru và các thắc mắc được giải đáp kịp thời.</p></div> </div>
+                    <div class="faq-item"> <button class="faq-question"><h4>AppSheet và Looker Studio có tốn thêm chi phí bản quyền không?</h4><span class="icon">+</span></button> <div class="faq-answer"><p>Không. AppSheet cho phép tạo và sử dụng các ứng dụng nội bộ (tối đa 10 người dùng/app) hoàn toàn miễn phí. Looker Studio cũng là một công cụ miễn phí của Google. Khóa học sẽ tập trung vào việc tận dụng tối đa các tính năng trong gói miễn phí này, vốn đã rất mạnh mẽ cho nhu cầu của ABE.</p></div> </div> 
+                </div> 
+            </div> 
+        </section>
+        
+        <section id="final-cta" style="background-color: #fff; padding-top: 0; padding-bottom: 60px;"> 
+            <div class="container"> 
+                <div class="final-quote fade-in" style="border-top-color: var(--accent-color);"> 
                     ✨ Đầu tư vào kỹ năng cho nhân viên là đầu tư cho sự phát triển của ABE. Hãy trang bị cho đội ngũ những công cụ mạnh mẽ nhất để làm việc hiệu quả và chuyên nghiệp hơn trong kỷ nguyên số.
                     <br><br>
                     <button class="btn btn-register">Đăng ký tham gia ngay</button>
@@ -237,7 +253,13 @@
     <footer id="footer-contact"> 
         <div class="container"> 
             <div class="footer-grid"> 
-                <div class="footer-col"><h4>CÔNG TY TNHH GIẢI PHÁP SỐ EMS</h4> <p>Cung cấp giải pháp quản trị vận hành và đào tạo chuyển đổi số chuyên nghiệp cho doanh nghiệp.</p></div> 
+                <div class="footer-col">
+                    <a href="#hero" class="footer-logo">
+                        <img src="https://gpems.net/metaImage.png" alt="EMS Solution Logo">
+                    </a>
+                    <h4>CÔNG TY TNHH GIẢI PHÁP SỐ EMS</h4> 
+                    <p>Cung cấp giải pháp quản trị vận hành và đào tạo chuyển đổi số chuyên nghiệp cho doanh nghiệp.</p>
+                </div> 
                 <div class="footer-col"> <h4>Thông tin Công ty</h4> <p> <strong>MST:</strong> 0316870151<br> <strong>Địa chỉ:</strong> 93/4 Liên khu 5-6, P. Bình Hưng Hòa B, Q. Bình Tân, TP.HCM<br> <strong>Hotline:</strong> <a href="tel:0903375265">0903.375.265 (Mr. Hiền)</a><br> <strong>Email:</strong> <a href="mailto:admin@gpems.net">admin@gpems.net</a></p> </div> 
                 <div class="footer-col"> <h4>Kết nối với chúng tôi</h4> <div class="social-icons"> <a href="https://www.facebook.com/gpems.net" target="_blank" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.99 3.66 9.13 8.44 9.88V15.5H8.08v-3.5h2.36V9.62c0-2.34 1.4-3.62 3.52-3.62 1.02 0 2.12.18 2.12.18v3.02h-1.54c-1.14 0-1.5.7-1.5 1.4v1.74h3.34l-.52 3.5h-2.82v6.38C18.34 21.13 22 16.99 22 12c0-5.52-4.48-10-10-10z"/></svg></a> <a href="https://www.youtube.com/@emssolution" target="_blank" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.52 11.23l-5.78 3.26c-.3.17-.68-.04-.68-.38V8.89c0-.34.38-.55.68-.38l5.78 3.26c.3.17.3.64 0 .81z"/></svg></a> </div> </div> 
             </div> 
@@ -251,12 +273,14 @@
             <div id="registration-form-container">
                 <h3>Đăng ký tham gia khóa đào tạo</h3>
                 <form id="registrationForm">
-                    <div class="form-group"><label for="fullName">Họ và tên người đăng ký</label><input type="text" id="fullName" required></div>
-                    <div class="form-group"><label for="email">Email nhận báo giá</label><input type="email" id="email" required></div>
-                    <div class="form-group"><label for="phone">Số điện thoại liên hệ</label><input type="tel" id="phone" required></div>
-                    <div class="form-group"><label for="numParticipants">Tổng số lượng học viên của công ty tham gia</label><input type="number" id="numParticipants" min="1" required></div>
+                    <div class="form-group"><label for="fullName">Họ và tên người đăng ký</label><input type="text" name="name" id="fullName" required></div>
+                    <div class="form-group"><label for="email">Email nhận báo giá</label><input type="email" name="email" id="email" required></div>
+                    <div class="form-group"><label for="phone">Số điện thoại liên hệ</label><input type="tel" name="phone" id="phone" required></div>
+                    <div class="form-group"><label for="numParticipants">Tổng số lượng học viên của công ty tham gia</label><input type="number" name="participants" id="numParticipants" min="1" required></div>
+                    <!-- Hidden field for calculated cost -->
+                    <input type="hidden" name="estimated_cost" id="estimated_cost">
                     <p id="form-error"></p>
-                    <button type="submit" class="btn" style="width: 100%;">Xác nhận & Gửi báo giá</button>
+                    <button type="submit" class="btn" style="width: 100%;">Xác nhận & Gửi đăng ký</button>
                 </form>
             </div>
              <div id="form-success"></div>
@@ -271,35 +295,41 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Reusable function for accordion
+            const initAccordion = (buttonSelector) => {
+                const buttons = document.querySelectorAll(buttonSelector);
+                buttons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const content = this.nextElementSibling;
+                        const isActive = this.classList.contains('active');
+                        
+                        // Close all other items
+                        document.querySelectorAll(buttonSelector).forEach(otherButton => {
+                            if (otherButton !== this) {
+                                otherButton.classList.remove('active');
+                                otherButton.nextElementSibling.style.maxHeight = null;
+                            }
+                        });
+
+                        // Toggle current item
+                        this.classList.toggle('active');
+                        if (!isActive) {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                        } else {
+                            content.style.maxHeight = null;
+                        }
+                    });
+                });
+            };
+
+            // Init accordions
+            initAccordion('.chapter-header');
+            initAccordion('.faq-question h4');
+
             // Fade-in animation
             const faders = document.querySelectorAll('.fade-in');
             const appearOnScroll = new IntersectionObserver((entries, observer) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
             faders.forEach(fader => appearOnScroll.observe(fader));
-            
-            // Accordion logic
-            const chapterHeaders = document.querySelectorAll('.chapter-header');
-            chapterHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const lessonList = this.nextElementSibling;
-                    const isActive = this.classList.contains('active');
-                    
-                    // Close other accordions
-                    chapterHeaders.forEach(otherHeader => {
-                        if (otherHeader !== this) {
-                            otherHeader.classList.remove('active');
-                            otherHeader.nextElementSibling.style.maxHeight = null;
-                        }
-                    });
-
-                    // Toggle current accordion
-                    this.classList.toggle('active');
-                    if (this.classList.contains('active')) {
-                        lessonList.style.maxHeight = lessonList.scrollHeight + "px";
-                    } else {
-                        lessonList.style.maxHeight = null;
-                    }
-                });
-            });
 
             // Modal Logic
             const regModal = document.getElementById('registrationModal');
@@ -328,40 +358,82 @@
 
             registrationForm.addEventListener('submit', function(e) {
                 e.preventDefault();
+
+                // --- IMPORTANT: FORMSPREE INTEGRATION ---
+                // Replace the URL below with your own Formspree endpoint.
+                const formAction = "https://formspree.io/f/xzzvdozj"; // <-- EXAMPLE URL. REPLACE WITH YOURS.
+
+                const submitButton = registrationForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                submitButton.innerHTML = 'Đang gửi...';
+                submitButton.disabled = true;
+
                 const fullName = document.getElementById('fullName').value.trim();
                 const email = document.getElementById('email').value.trim();
                 const phone = document.getElementById('phone').value.trim();
                 const numParticipants = parseInt(document.getElementById('numParticipants').value, 10);
+                const costInput = document.getElementById('estimated_cost');
 
                 if (!fullName || !email || !phone || !numParticipants || numParticipants < 1) {
                     formError.textContent = 'Vui lòng điền đầy đủ thông tin hợp lệ.';
                     formError.style.display = 'block';
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
                     return;
                 }
                 formError.style.display = 'none';
 
-                // --- Pricing Calculation ---
+                // Pricing Calculation
                 const basePrice = 60000000;
                 const baseStudents = 25;
                 const surchargePerStudent = 1900000;
                 let totalPrice = basePrice;
-
                 if (numParticipants > baseStudents) {
                     totalPrice += (numParticipants - baseStudents) * surchargePerStudent;
                 }
                 const formattedPrice = totalPrice.toLocaleString('vi-VN') + ' VNĐ';
-                
-                // Hide form, show success message
-                formContainer.style.display = 'none';
-                formSuccess.innerHTML = `
-                    <h4>Đăng ký thành công!</h4>
-                    <p>Cảm ơn <strong>${fullName}</strong> đã đăng ký.</p>
-                    <p>Một email xác nhận cùng báo giá chi tiết đã được gửi tới địa chỉ <strong>${email}</strong>.</p>
-                    <p>Chi phí dự kiến cho <strong>${numParticipants} học viên</strong> là:</p>
-                    <p class="price">${formattedPrice}</p>
-                    <p style="margin-top: 15px; font-size: 0.9em; color: #556276;">Chúng tôi sẽ sớm liên hệ lại với Quý Công ty qua số điện thoại ${phone} để xác nhận.</p>
-                `;
-                formSuccess.style.display = 'block';
+                costInput.value = formattedPrice;
+
+                const formData = new FormData(registrationForm);
+
+                fetch(formAction, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        formContainer.style.display = 'none';
+                        formSuccess.innerHTML = `
+                            <h4>Đăng ký thành công!</h4>
+                            <p>Cảm ơn <strong>${fullName}</strong> đã đăng ký.</p>
+                            <p>Thông tin đăng ký đã được gửi đi thành công. Chúng tôi sẽ sớm liên hệ lại với Quý Công ty.</p>
+                            <p>Chi phí dự kiến cho <strong>${numParticipants} học viên</strong> là:</p>
+                            <p class="price">${formattedPrice}</p>
+                            <p style="margin-top: 15px; font-size: 0.9em; color: #556276;">Chúng tôi sẽ liên hệ qua số điện thoại ${phone} để xác nhận.</p>
+                        `;
+                        formSuccess.style.display = 'block';
+                    } else {
+                        // This handles server-side validation errors from Formspree
+                        response.json().then(data => {
+                            if (Object.hasOwn(data, 'errors')) {
+                                formError.textContent = data["errors"].map(error => error["message"]).join(", ");
+                            } else {
+                                formError.textContent = 'Đã có lỗi xảy ra khi gửi đăng ký. Vui lòng thử lại.';
+                            }
+                            formError.style.display = 'block';
+                        })
+                    }
+                })
+                .catch(error => {
+                    // This handles network errors
+                    formError.textContent = 'Lỗi kết nối. Vui lòng kiểm tra lại đường truyền và thử lại.';
+                    formError.style.display = 'block';
+                })
+                .finally(() => {
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                });
             });
 
             // Active Nav Link on Scroll
