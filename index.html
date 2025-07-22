@@ -3,77 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lựa Chọn Chương Trình Đào Tạo Phù Hợp Cho ABE</title>
-    <meta name="description" content="So sánh chi tiết hai chương trình đào tạo Google Workspace & AI để ABE Industrial Vietnam lựa chọn phương án phù hợp nhất.">
+    <title>Chương Trình Đào Tạo Google Workspace & AI | ABE Industrial Vietnam</title>
+    <meta name="description" content="Dashboard so sánh trực quan giữa khóa học 4 buổi và 6 buổi, giúp ABE Industrial Vietnam lựa chọn phương án đào tạo Google Workspace & AI tối ưu nhất.">
     <meta name="author" content="EMS SOLUTION">
     <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Workspace_Logo.svg/2560px-Google_Workspace_Logo.svg.png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
         :root {
-            --primary-color: #0a68ff; --secondary-color: #0d1b2a; --accent-color: #ff6d00;
-            --light-bg-color: #f8f9fa; --text-color: #344054; --light-text-color: #fff;
-            --border-color: #e4e7ec; --border-radius: 12px; --box-shadow: 0 8px 30px rgba(13, 27, 42, 0.08);
-            --success-color: #1a73e8; --deep-blue-color: #34495e;
+            --basic-color: #1a73e8;     /* Blue for Basic */
+            --recommended-color: #ff6d00; /* Orange for Recommended */
+            --bg-color: #f7f9fa;
+            --card-bg-color: #ffffff;
+            --text-color: #202124;
+            --subtle-text-color: #5f6368;
+            --border-color: #e8eaed;
+            --radius-lg: 20px;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 15px 50px rgba(0, 0, 0, 0.12);
         }
         html { scroll-behavior: smooth; }
-        body { font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.6; color: var(--text-color); background-color: #fcfdff; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .page-header { text-align: center; padding: 60px 0 40px; }
-        .page-header h1 { font-size: 2.8em; color: var(--secondary-color); margin-bottom: 10px; font-weight: 800; }
-        .page-header p { font-size: 1.15em; max-width: 800px; margin: 0 auto; color: #556276; }
-        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding-bottom: 60px; }
-        .course-card { background: #fff; border-radius: var(--border-radius); border: 1px solid var(--border-color); box-shadow: none; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
-        .course-card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow); }
-        
-        .card-header { padding: 25px; border-bottom: 1px solid var(--border-color); text-align: center; }
-        .card-header .tag { font-weight: 700; display: inline-block; padding: 6px 18px; border-radius: 50px; margin-bottom: 15px; font-size: 0.9em; }
-        .card-header h2 { font-size: 2em; margin: 0; color: var(--secondary-color); font-weight: 800; }
-        
-        .card-body { padding: 15px 25px 25px; flex-grow: 1; }
-        
-        /* Dashboard Metrics */
-        .metrics-dashboard { padding: 20px 0; }
-        .metric-item { margin-bottom: 15px; }
-        .metric-item .label-wrapper { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.9em; }
-        .metric-item .label { font-weight: 700; }
-        .metric-item .value { font-weight: 500; color: #556276; }
-        .progress-bar { width: 100%; height: 10px; background-color: #e9ecef; border-radius: 5px; overflow: hidden; }
-        .progress-fill { height: 100%; border-radius: 5px; transition: width 0.8s ease-out; }
-        .course-card.recommended .progress-fill { background-color: var(--success-color); }
-        .course-card.comprehensive .progress-fill { background-color: var(--deep-blue-color); }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            line-height: 1.55; /* Adjusted for spacious feel */
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1300px; 
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .page-header {
+            text-align: center;
+            padding: 50px 0 40px;
+        }
+        .page-header h1 {
+            font-size: 2.8em;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+        .page-header p {
+            font-size: 1.15em;
+            max-width: 750px;
+            margin: 0 auto;
+            color: var(--subtle-text-color);
+        }
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: stretch;
+            margin-bottom: 60px;
+        }
+        .course-card {
+            background: var(--card-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            padding: 35px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .course-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+        .course-card:active {
+            transform: translateY(-2px) scale(0.99);
+            box-shadow: var(--shadow);
+        }
+        .course-card.basic { border-top: 5px solid var(--basic-color); }
+        .course-card.recommended { border-top: 5px solid var(--recommended-color); }
 
-        /* Comparison Details Table */
-        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-        .comparison-table tr { border-bottom: 1px dashed var(--border-color); }
-        .comparison-table tr:last-child { border-bottom: none; }
-        .comparison-table td { padding: 15px 0; vertical-align: top; }
-        .comparison-table td:first-child { width: 110px; font-weight: 700; color: var(--secondary-color); }
-        .comparison-table .icon-check { color: #27ae60; margin-right: 5px; }
-        .comparison-table .icon-rocket { color: #e67e22; margin-right: 5px; }
+        .card-header { text-align: center; padding-bottom: 15px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); }
+        .plan-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .tag-basic { background-color: #e8f0fe; color: var(--basic-color); }
+        .tag-recommended { background-color: #fff0e6; color: var(--recommended-color); }
+        .plan-name { font-size: 1.7em; font-weight: 800; margin: 0; line-height: 1.3; }
+        .plan-name .plan-subtitle { font-size: 0.7em; font-weight: 600; color: var(--subtle-text-color); display: block; }
         
-        /* Tool Logos */
-        .tools-logo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(55px, 1fr)); gap: 15px; align-items: center; }
+        .card-body { flex-grow: 1; }
+        .card-body-top { 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .card-body-full { margin-top: 20px; }
+        
+        .section-heading { font-size: 1.05em; font-weight: 700; color: var(--text-color); margin: 0 0 10px; }
+        .section-content { font-size: 0.9em; color: var(--subtle-text-color); margin: 0;}
+
+        /* Dashboard Metrics */
+        .metrics-dashboard { display: flex; flex-direction: column; gap: 12px; }
+        .metric-item .label-wrapper { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; font-size: 0.85em; }
+        .metric-item .label { font-weight: 600; }
+        .metric-item .value { font-weight: 500; color: var(--subtle-text-color); }
+        .progress-bar { width: 100%; height: 6px; background-color: #e9ecef; border-radius: 3px; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 3px; }
+        .course-card.basic .progress-fill { background: linear-gradient(90deg, #4285F4, #1a73e8); }
+        .course-card.recommended .progress-fill { background: linear-gradient(90deg, #ffa94d, #ff6d00); }
+
+        /* Key outcomes list */
+        .outcomes-list { margin: 0; padding: 0; list-style: none; }
+        .outcomes-list li { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 0.95em; }
+        .outcomes-list .icon { flex-shrink: 0; margin-top: 4px; font-size: 1.05em; }
+        .icon-check { color: #1e8e3e; }
+        .icon-advanced { color: var(--recommended-color); }
+
+        /* Tool logos */
+        .tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .tools-grid.large { grid-template-columns: repeat(5, 1fr); }
         .tool-logo { text-align: center; }
         .tool-logo img { height: 32px; margin: 0 auto; object-fit: contain; }
-        .tool-logo p { font-size: 11px; margin: 5px 0 0; color: #6c757d; line-height: 1.2; }
+        .tool-logo p { font-size: 11px; margin: 4px 0 0; color: var(--subtle-text-color); line-height: 1.2; font-weight: 500;}
 
-        .card-footer { padding: 25px; text-align: center; margin-top: auto; border-top: 1px solid var(--border-color); }
-        .btn { display: inline-block; background-color: var(--accent-color); color: var(--light-text-color); padding: 14px 32px; font-size: 1em; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s; width: 100%; box-sizing: border-box; }
-        .btn:hover { transform: scale(1.03); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+        /* Footer with Price & CTA */
+        .card-footer { margin-top: auto; padding-top: 25px; text-align: center; border-top: 1px solid var(--border-color); }
+        .price { font-size: 2em; font-weight: 800; color: var(--text-color); margin: 0; }
+        .price .note { font-size: 0.5em; font-weight: 500; color: var(--subtle-text-color); letter-spacing: 0.5px; }
+        .btn { display: block; width: 100%; background-color: var(--basic-color); color: #fff; padding: 14px; font-size: 1.05em; font-weight: 600; text-decoration: none; border-radius: 10px; transition: all 0.3s; margin-top: 15px; }
+        .btn-recommended { background-color: var(--recommended-color); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
         
-        .course-card.recommended { border-color: var(--success-color); }
-        .course-card.recommended .card-header .tag { background-color: #e8f0fe; color: var(--success-color); }
-        .course-card.recommended .btn { background-color: var(--success-color); }
-        .course-card.recommended .btn:hover { background-color: #1765c7; }
+        .copyright { padding: 40px 0; font-size: 0.9em; text-align: center; color: var(--subtle-text-color); }
 
-        .course-card.comprehensive .card-header .tag { background-color: #e9ecef; color: var(--deep-blue-color); }
-        .course-card.comprehensive .btn { background-color: var(--deep-blue-color); }
-        .course-card.comprehensive .btn:hover { background-color: var(--secondary-color); }
-
-        .copyright { padding: 20px 0; font-size: 0.9em; text-align: center; color: #6c757d; }
-
-        @media (max-width: 991px) {
+        @media (max-width: 1024px) {
             .comparison-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .card-body-top { grid-template-columns: 1fr; }
             .page-header h1 { font-size: 2.2em; }
         }
     </style>
@@ -81,125 +150,115 @@
 <body>
     <div class="container">
         <header class="page-header">
-            <h1>Lựa Chọn Chương Trình Đào Tạo Phù Hợp</h1>
-            <p>Bảng so sánh chi tiết hai phương án đào tạo được thiết kế riêng cho ABE Industrial Vietnam, giúp Quý Công ty dễ dàng đưa ra lựa chọn tối ưu nhất dựa trên giá trị và mục tiêu mong muốn.</p>
+            <h1>Chương Trình Đào Tạo Ứng dụng Google Workspace & AI</h1>
+            <p>So sánh và lựa chọn phương án đào tạo phù hợp cho team của bạn.</p>
         </header>
 
         <main class="comparison-grid">
-            <!-- ========== KHÓA 4 BUỔI ========== -->
-            <div class="course-card recommended">
+            <!-- ========== CARD: KHÓA 4 BUỔI ========== -->
+            <div class="course-card basic">
                 <div class="card-header">
-                    <span class="tag">Phương Án Phù Hợp</span>
-                    <h2>Khóa Học 4 Buổi</h2>
+                    <span class="plan-tag tag-basic">Phương Án Cơ Bản</span>
+                    <h2 class="plan-name">Khóa 4 Buổi (16 giờ): <span class="plan-subtitle">Tối Ưu Hiệu Suất Công Việc</span></h2>
                 </div>
+
                 <div class="card-body">
-                    <div class="metrics-dashboard">
-                        <div class="metric-item">
-                            <div class="label-wrapper"><span class="label">Độ khó</span><span class="value">Cơ bản</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 35%;"></div></div>
+                    <div class="card-body-top">
+                        <div>
+                            <h4 class="section-heading">Dashboard Đánh Giá</h4>
+                            <div class="metrics-dashboard">
+                                <div class="metric-item"><div class="label-wrapper"><span class="label">Độ khó</span><span class="value">Cơ bản</span></div><div class="progress-bar"><div class="progress-fill" style="width: 35%;"></div></div></div>
+                                <div class="metric-item"><div class="label-wrapper"><span class="label">Chiều sâu kiến thức</span><span class="value">Tập trung</span></div><div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div></div>
+                                <div class="metric-item"><div class="label-wrapper"><span class="label">Khả năng ứng dụng</span><span class="value">Cao</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div></div>
+                            </div>
                         </div>
-                        <div class="metric-item">
-                            <div class="label-wrapper"><span class="label">Chiều sâu kiến thức</span><span class="value">Tập trung</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 50%;"></div></div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="label-wrapper"><span class="label">Khả năng ứng dụng</span><span class="value">Cao</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="label-wrapper"><span class="label">Mức đầu tư</span><span class="value">Tiết kiệm</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 84%;"></div></div>
+                        <div>
+                            <h4 class="section-heading">Đối Tượng Phù Hợp</h4>
+                            <p class="section-content">Mọi nhân viên văn phòng (NS, KT, QC, Mua hàng, XNK...) muốn nâng cao hiệu suất làm việc tức thì.</p>
                         </div>
                     </div>
-                    
-                    <table class="comparison-table">
-                        <tr>
-                            <td>Mục tiêu</td>
-                            <td><strong>Tối ưu hiệu suất công việc hằng ngày</strong> cho nhân viên, giải quyết nhanh các tác vụ lặp lại.</td>
-                        </tr>
-                        <tr>
-                            <td>Năng lực<br>đầu ra</td>
-                            <td>Học viên làm chủ các công cụ cộng tác, biết tự động hóa báo cáo cơ bản và dùng AI thành thạo để soạn thảo, tóm tắt, khai thác tài liệu công ty.</td>
-                        </tr>
-                        <tr>
-                            <td>Công cụ</td>
-                            <td>
-                                <div class="tools-logo-grid">
-                                    <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/1200px-Google_Drive_icon_%282020%29.svg.png"><p>Drive</p></div>
-                                    <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/512px-Google_Sheets_logo_%282014-2020%29.svg.png"><p>Sheets</p></div>
-                                    <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Google_Docs_2020_Logo.svg/1200px-Google_Docs_2020_Logo.svg.png"><p>Docs</p></div>
-                                    <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/1200px-Google_Forms_2020_Logo.svg.png"><p>Forms</p></div>
-                                    <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/1200px-Google_Gemini_logo.svg.png"><p>Gemini</p></div>
-                                    <div class="tool-logo"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/notebooklm.png"><p>NoteBookLM</p></div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="card-body-full">
+                        <h4 class="section-heading">Sản Phẩm Đầu Ra</h4>
+                        <ul class="outcomes-list">
+                            <li><span class="icon icon-check">✓</span> Hệ thống báo cáo, khảo sát tự động.</li>
+                            <li><span class="icon icon-check">✓</span> Kỹ năng dùng AI như trợ lý ảo để soạn thảo, tóm tắt.</li>
+                            <li><span class="icon icon-check">✓</span> Kho tài liệu được số hóa và khai thác thông minh.</li>
+                        </ul>
+                        <h4 class="section-heading" style="margin-top:20px;">Công Cụ & Hệ Thống</h4>
+                        <div class="tools-grid">
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/1200px-Google_Drive_icon_%282020%29.svg.png"><p>Drive</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/512px-Google_Sheets_logo_%282014-2020%29.svg.png"><p>Sheets</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Google_Docs_2020_Logo.svg/1200px-Google_Docs_2020_Logo.svg.png"><p>Docs</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/1200px-Google_Forms_2020_Logo.svg.png"><p>Forms</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/1200px-Google_Gemini_logo.svg.png"><p>Gemini</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png"><p>ChatGPT</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg"><p>Notion AI</p></div>
+                            <div class="tool-logo"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/notebooklm.png"><p>NoteBookLM</p></div>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="card-footer">
-                    <a href="abe4.html" class="btn">Xem Chi Tiết Khóa 4 Buổi</a>
+                    <p class="price">55.000.000<span class="note"> VNĐ / TRỌN GÓI</span></p>
+                    <a href="abe4.html" class="btn">Xem Chi Tiết Khóa Học</a>
                 </div>
             </div>
-            
-            <!-- ========== KHÓA 6 BUỔI ========== -->
-            <div class="course-card comprehensive">
+
+            <!-- ========== CARD: KHÓA 6 BUỔI ========== -->
+            <div class="course-card recommended">
                 <div class="card-header">
-                    <span class="tag">Phương Án Toàn Diện</span>
-                    <h2>Khóa Học 6 Buổi</h2>
+                    <span class="plan-tag tag-recommended">Phương Án Đề Xuất</span>
+                    <h2 class="plan-name">Khóa 6 Buổi (20 giờ): <span class="plan-subtitle">Xây Dựng Hệ Thống Tự Động</span></h2>
                 </div>
+
                 <div class="card-body">
-                    <div class="metrics-dashboard">
-                        <div class="metric-item">
-                            <div class="label-wrapper"><span class="label">Độ khó</span><span class="value">Nâng cao</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div>
+                    <div class="card-body-top">
+                        <div>
+                            <h4 class="section-heading">Dashboard Đánh Giá</h4>
+                            <div class="metrics-dashboard">
+                                <div class="metric-item"><div class="label-wrapper"><span class="label">Độ khó</span><span class="value">Nâng cao</span></div><div class="progress-bar"><div class="progress-fill" style="width: 70%;"></div></div></div>
+                                <div class="metric-item"><div class="label-wrapper"><span class="label">Chiều sâu kiến thức</span><span class="value">Toàn diện</span></div><div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div></div>
+                                <div class="metric-item"><div class="label-wrapper"><span class="label">Khả năng ứng dụng</span><span class="value">Hệ thống</span></div><div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div></div>
+                            </div>
                         </div>
-                         <div class="metric-item">
-                            <div class="label-wrapper"><span class="label">Chiều sâu kiến thức</span><span class="value">Toàn diện</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="label-wrapper"><span class="label">Khả năng ứng dụng</span><span class="value">Hệ thống</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
-                        </div>
-                        <div class="metric-item">
-                            <div class="label-wrapper"><span class="label">Mức đầu tư</span><span class="value">Tối đa</span></div>
-                            <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
+                         <div>
+                            <h4 class="section-heading">Đối Tượng Phù Hợp</h4>
+                            <p class="section-content">Nhân viên văn phòng và các Team Leader cần tự xây dựng công cụ quản lý, báo cáo chuyên sâu.</p>
                         </div>
                     </div>
+                     <div class="card-body-full">
+                        <h4 class="section-heading">Sản Phẩm Đầu Ra</h4>
+                         <ul class="outcomes-list">
+                            <li><span class="icon icon-check">✓</span> Toàn bộ sản phẩm của khóa 4 buổi.</li>
+                            <li><span class="icon icon-advanced">📱</span> <strong>Ứng dụng di động (App)</strong> để quản lý công việc.</li>
+                            <li><span class="icon icon-advanced">📊</span> <strong>Dashboard báo cáo real-time</strong> chuyên nghiệp.</li>
+                        </ul>
 
-                     <table class="comparison-table">
-                        <tr>
-                            <td>Mục tiêu</td>
-                            <td><strong>Xây dựng hệ thống quản lý & báo cáo tự động từ A-Z</strong>, nâng cao năng lực hệ thống cho công ty.</td>
-                        </tr>
-                        <tr>
-                            <td>Năng lực<br>đầu ra</td>
-                            <td>Ngoài các kỹ năng của khóa 4 buổi, học viên có thể <strong>tự xây dựng App di động</strong> quản lý công việc và <strong>thiết kế Dashboard</strong> báo cáo real-time.</td>
-                        </tr>
-                        <tr>
-                            <td>Công cụ</td>
-                            <td>
-                                <div class="tools-logo-grid">
-                                    <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/1200px-Google_Drive_icon_%282020%29.svg.png"><p>Drive</p></div>
-                                    <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/512px-Google_Sheets_logo_%282014-2020%29.svg.png"><p>Sheets+</p></div>
-                                    <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/1200px-Google_Gemini_logo.svg.png"><p>Gemini</p></div>
-                                    <div class="tool-logo"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/notebooklm.png"><p>NoteBookLM</p></div>
-                                    <div class="tool-logo"><img src="https://cdn-1.webcatalog.io/catalog/appsheet/appsheet-icon-filled-256.png"><p>AppSheet</p></div>
-                                    <div class="tool-logo"><img src="https://images.seeklogo.com/logo-png/61/2/looker-studio-logo-png_seeklogo-617989.png"><p>Looker</p></div>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                        <h4 class="section-heading" style="margin-top:20px;">Công Cụ & Hệ Thống</h4>
+                         <div class="tools-grid large">
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Drive_icon_%282020%29.svg/1200px-Google_Drive_icon_%282020%29.svg.png"><p>Drive</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/512px-Google_Sheets_logo_%282014-2020%29.svg.png"><p>Sheets Pro</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Google_Docs_2020_Logo.svg/1200px-Google_Docs_2020_Logo.svg.png"><p>Docs</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Google_Forms_2020_Logo.svg/1200px-Google_Forms_2020_Logo.svg.png"><p>Forms</p></div>
+                             <div class="tool-logo"><img src="https://cdn-1.webcatalog.io/catalog/appsheet/appsheet-icon-filled-256.png"><p>AppSheet</p></div>
+                            <div class="tool-logo"><img src="https://images.seeklogo.com/logo-png/61/2/looker-studio-logo-png_seeklogo-617989.png"><p>Looker</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/1200px-Google_Gemini_logo.svg.png"><p>Gemini</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/1200px-ChatGPT_logo.svg.png"><p>ChatGPT</p></div>
+                            <div class="tool-logo"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Notion-logo.svg"><p>Notion AI</p></div>
+                            <div class="tool-logo"><img src="https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/light/notebooklm.png"><p>NoteBookLM</p></div>
+                        </div>
+                    </div>
                 </div>
-                 <div class="card-footer">
-                    <a href="abe6.html" class="btn">Xem Chi Tiết Khóa 6 Buổi</a>
+
+                <div class="card-footer">
+                    <p class="price">70.000.000<span class="note"> VNĐ / TRỌN GÓI</span></p>
+                    <a href="abe6.html" class="btn btn-recommended">Xem Chi Tiết Khóa Học</a>
                 </div>
             </div>
         </main>
-        
-        <footer class="copyright">
-             <p>© 2025 EMS SOLUTION. All Rights Reserved.</p>
-        </footer>
     </div>
+    <footer class="copyright">
+         <p>© 2025 EMS SOLUTION. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
