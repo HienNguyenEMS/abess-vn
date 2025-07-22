@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lựa Chọn Chương Trình Đào Tạo Phù Hợp Cho ABE</title>
+    <meta name="description" content="So sánh chi tiết hai chương trình đào tạo Google Workspace & AI để ABE Industrial Vietnam lựa chọn phương án phù hợp nhất.">
+    <meta name="author" content="EMS SOLUTION">
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Google_Workspace_Logo.svg/2560px-Google_Workspace_Logo.svg.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap');
+        :root {
+            --primary-color: #0a68ff; --secondary-color: #0d1b2a; --accent-color: #ff6d00;
+            --light-bg-color: #f8f9fa; --text-color: #344054; --light-text-color: #fff;
+            --border-color: #e4e7ec; --border-radius: 12px; --box-shadow: 0 6px 20px rgba(13, 27, 42, 0.07);
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Be Vietnam Pro', sans-serif; line-height: 1.6; color: var(--text-color); background-color: var(--light-bg-color); -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { text-align: center; padding: 50px 0 30px; }
+        .header h1 { font-size: 2.8em; color: var(--secondary-color); margin-bottom: 10px; font-weight: 800; }
+        .header p { font-size: 1.15em; max-width: 800px; margin: 0 auto; color: #556276; }
+        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding-bottom: 50px; }
+        .course-card { background: #fff; border-radius: var(--border-radius); box-shadow: var(--box-shadow); display: flex; flex-direction: column; }
+        .course-card .header { background-color: var(--secondary-color); color: white; padding: 20px; border-radius: var(--border-radius) var(--border-radius) 0 0; text-align: center; }
+        .course-card .header .tag { font-weight: 700; display: inline-block; padding: 5px 15px; border-radius: 20px; margin-bottom: 10px; font-size: 0.9em; }
+        .course-card .header h2 { font-size: 1.8em; margin: 0; }
+        .course-card .content { padding: 25px; flex-grow: 1; }
+        .course-card .comparison-row { display: grid; grid-template-columns: 100px 1fr; gap: 15px; padding: 15px 0; border-bottom: 1px solid var(--border-color); align-items: start; }
+        .course-card .comparison-row:last-child { border-bottom: none; }
+        .course-card .comparison-row .label { font-weight: 700; color: var(--secondary-color); font-size: 0.95em; }
+        .course-card .comparison-row .value { margin: 0; font-size: 0.95em; }
+        .course-card .comparison-row ul { margin: 0; padding-left: 20px; }
+        .course-card .footer { padding: 25px; text-align: center; }
+        .btn { display: inline-block; background-color: var(--accent-color); color: var(--light-text-color); padding: 12px 28px; font-size: 1em; font-weight: 700; text-decoration: none; border-radius: 50px; transition: all 0.3s; }
+        .btn:hover { background-color: #e65100; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 109, 0, 0.4); }
+        .course-card.recommended .header { background: linear-gradient(145deg, var(--primary-color), #4e9aff); }
+        .course-card.recommended .header .tag { background-color: rgba(255,255,255,0.2); }
+        .course-card.extended .header { background: linear-gradient(145deg, #434e5a, var(--secondary-color)); }
+        .course-card.extended .header .tag { background-color: rgba(255,255,255,0.15); }
+        
+        .copyright { padding: 20px 0; font-size: 0.9em; text-align: center; color: #6c757d; }
+
+        @media (max-width: 991px) {
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Lựa Chọn Chương Trình Đào Tạo Phù Hợp</h1>
+            <p>Dưới đây là bảng so sánh chi tiết giữa hai phương án đào tạo được thiết kế riêng cho ABE Industrial Vietnam, giúp Quý Công ty dễ dàng đưa ra lựa chọn tối ưu nhất.</p>
+        </header>
+
+        <main class="comparison-grid">
+            <div class="course-card recommended">
+                <div class="header">
+                    <span class="tag">Phương Án Đề Xuất</span>
+                    <h2>Khóa Học 4 Buổi</h2>
+                </div>
+                <div class="content">
+                    <div class="comparison-row">
+                        <span class="label">Tên khóa</span>
+                        <p class="value"><strong>Tối Ưu Hiệu Suất Văn Phòng Với Google Workspace & AI</strong></p>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="label">Đối tượng</span>
+                        <p class="value">Nhân viên văn phòng các bộ phận: Nhân sự, Kế toán, Tổng vụ, QC, Thu mua, XNK, Quản lý...</p>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="label">Mục tiêu</span>
+                        <p class="value">Tập trung vào các kỹ năng cốt lõi, giải quyết vấn đề hằng ngày và ứng dụng AI để tăng hiệu suất tức thì.</p>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="label">Công cụ</span>
+                        <p class="value">
+                            <ul>
+                                <li>Google Drive, Docs, Calendar</li>
+                                <li>Google Sheets, Forms</li>
+                                <li>AI: Google Gemini, ChatGPT</li>
+                                <li><b>AI Chuyên sâu: Google NoteBookLM</b></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="label">Đầu ra</span>
+                        <p class="value">Nhân viên làm việc hiệu quả, tự động hóa các tác vụ lặp lại, biết dùng AI làm trợ lý ảo.</p>
+                    </div>
+                     <div class="comparison-row">
+                        <span class="label">Chi phí</span>
+                        <p class="value"><strong>55.000.000 VNĐ</strong><br>(Trọn gói, không chịu thuế)</p>
+                    </div>
+                </div>
+                <div class="footer">
+                    <a href="abe4.html" class="btn">Xem Chi Tiết Khóa 4 Buổi</a>
+                </div>
+            </div>
+            
+            <div class="course-card extended">
+                <div class="header">
+                    <span class="tag">Phương Án Mở Rộng</span>
+                    <h2>Khóa Học 6 Buổi</h2>
+                </div>
+                <div class="content">
+                    <div class="comparison-row">
+                        <span class="label">Tên khóa</span>
+                        <p class="value"><strong>Từ Thủ Công Đến Tự Động: Làm Chủ Toàn Diện Google Workspace & AI</strong></p>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="label">Đối tượng</span>
+                        <p class="value">Ngoài nhân viên văn phòng, còn phù hợp cho đội ngũ cần xây dựng hệ thống quản lý, báo cáo (Sản xuất, QC, Kho...).</p>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="label">Mục tiêu</span>
+                        <p class="value">Đi từ nền tảng đến việc tự tay xây dựng một hệ thống hoàn chỉnh từ A-Z (App quản lý, Dashboard báo cáo).</p>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="label">Công cụ</span>
+                        <p class="value">
+                            <ul>
+                                <li>Toàn bộ công cụ của khóa 4 buổi</li>
+                                <li><b>Nâng cao: Google Sheets (VLOOKUP, QUERY, Pivot Table)</b></li>
+                                <li><b>Xây dựng App: Google AppSheet</b></li>
+                                <li><b>Báo cáo Dashboard: Looker Studio</b></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="label">Đầu ra</span>
+                        <p class="value">Học viên có thể tự xây dựng ứng dụng di động và dashboard báo cáo tự động, chuyên nghiệp.</p>
+                    </div>
+                     <div class="comparison-row">
+                        <span class="label">Chi phí</span>
+                        <p class="value"><strong>65.000.000 VNĐ</strong><br>(Trọn gói, chưa gồm VAT)</p>
+                    </div>
+                </div>
+                 <div class="footer">
+                    <a href="abe6.html" class="btn">Xem Chi Tiết Khóa 6 Buổi</a>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="copyright">
+             <p>© 2025 EMS SOLUTION. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
