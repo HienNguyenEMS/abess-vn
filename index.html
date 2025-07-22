@@ -24,7 +24,7 @@
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Be Vietnam Pro', sans-serif;
-            line-height: 1.55; /* Adjusted for spacious feel */
+            line-height: 1.55;
             color: var(--text-color);
             background-color: var(--bg-color);
             -webkit-font-smoothing: antialiased;
@@ -76,8 +76,13 @@
             transform: translateY(-2px) scale(0.99);
             box-shadow: var(--shadow);
         }
-        .course-card.basic { border-top: 5px solid var(--basic-color); }
-        .course-card.recommended { border-top: 5px solid var(--recommended-color); }
+        .course-card.basic { 
+            border-top: 5px solid var(--basic-color); 
+        }
+        .course-card.recommended { 
+            border: 2px solid var(--recommended-color);
+            border-top-width: 5px;
+        }
 
         .card-header { text-align: center; padding-bottom: 15px; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); }
         .plan-tag {
