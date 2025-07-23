@@ -29,7 +29,7 @@
             color: var(--text-color);
             background-color: var(--bg-color);
             -webkit-font-smoothing: antialiased;
-            font-size: 15px; /* Slightly reduced base font size */
+            font-size: 15px;
         }
         .container {
             max-width: 1300px;
@@ -66,7 +66,7 @@
             box-shadow: var(--shadow);
             display: flex;
             flex-direction: column;
-            padding: 30px; /* Reduced padding */
+            padding: 30px;
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
         .course-card:hover {
@@ -140,12 +140,12 @@
 
         /* Full Width Sections */
         .card-body-full-width {
-            margin-top: auto; /* Push to bottom */
+            margin-top: auto;
             padding-top: 20px;
             border-top: 1px solid var(--border-color);
         }
         .card-body-full-width .section-heading:not(:first-child) {
-            margin-top: 20px; /* Space between sections */
+            margin-top: 20px;
         }
         
         /* Tool logos */
@@ -155,10 +155,42 @@
         .tool-logo p { font-size: 11px; margin: 4px 0 0; color: var(--subtle-text-color); line-height: 1.2; font-weight: 500; }
 
         /* Footer */
-        .card-footer { margin-top: 25px; padding-top: 20px; text-align: center; border-top: 1px solid var(--border-color); }
-        .price { font-size: 1.9em; font-weight: 800; color: var(--text-color); margin: 0; }
-        .price .note { font-size: 0.5em; font-weight: 500; color: var(--subtle-text-color); letter-spacing: 0.5px; }
-        .btn { display: block; width: 100%; background-color: var(--basic-color); color: #fff; padding: 12px; font-size: 1em; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s; margin-top: 12px; }
+        .card-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .price {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1.2;
+            text-align: left;
+        }
+        .price .note {
+            font-size: 0.5em;
+            font-weight: 500;
+            color: var(--subtle-text-color);
+            letter-spacing: 0.5px;
+            display: block;
+        }
+        .btn {
+            background-color: var(--basic-color);
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 0.95em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
         .btn-recommended { background-color: var(--recommended-color); }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
         
@@ -177,6 +209,19 @@
                 border-bottom: 1px solid var(--border-color);
             }
             .page-header h1 { font-size: 2.2em; }
+        }
+         @media (max-width: 480px) {
+            .card-footer {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .price {
+                text-align: center;
+                margin-bottom: 10px;
+            }
+            .btn {
+                text-align: center;
+            }
         }
     </style>
 </head>
